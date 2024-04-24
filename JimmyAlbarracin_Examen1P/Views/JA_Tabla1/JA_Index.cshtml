@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<JimmyAlbarracin_Examen1P.Models.JA_Tabla1>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Venta de Videojuegos";
 }
 
-<h1>Index</h1>
+<h1>Venta de Videojuegos :)</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nombre)
+                @Html.DisplayNameFor(model => model.NombreVideojuego)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ContenidoPremium)
@@ -22,10 +22,10 @@
                 @Html.DisplayNameFor(model => model.Precio)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Celular)
+                @Html.DisplayNameFor(model => model.Descripcion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FechaCompra)
+                @Html.DisplayNameFor(model => model.Fecha)
             </th>
             <th></th>
         </tr>
@@ -34,7 +34,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
+                @Html.DisplayFor(modelItem => item.NombreVideojuego)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ContenidoPremium)
@@ -43,10 +43,10 @@
                 @Html.DisplayFor(modelItem => item.Precio)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Celular)
+                @Html.DisplayFor(modelItem => item.Descripcion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FechaCompra)
+                @Html.DisplayFor(modelItem => item.Fecha)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

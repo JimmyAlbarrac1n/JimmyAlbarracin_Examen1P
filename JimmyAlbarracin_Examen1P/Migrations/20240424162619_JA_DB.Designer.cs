@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JimmyAlbarracin_Examen1P.Migrations
 {
     [DbContext(typeof(JimmyAlbarracin_DataContext))]
-    [Migration("20240424154724_JA_DB")]
+    [Migration("20240424162619_JA_DB")]
     partial class JA_DB
     {
         /// <inheritdoc />
@@ -32,17 +32,17 @@ namespace JimmyAlbarracin_Examen1P.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Celular")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("ContenidoPremium")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("FechaCompra")
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Nombre")
+                    b.Property<string>("NombreVideojuego")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

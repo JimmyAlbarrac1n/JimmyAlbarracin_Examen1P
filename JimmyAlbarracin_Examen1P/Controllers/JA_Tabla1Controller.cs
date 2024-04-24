@@ -19,7 +19,7 @@ namespace JimmyAlbarracin_Examen1P.Controllers
         }
 
         // GET: JA_Tabla1
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> JA_Index()
         {
             return View(await _context.JA_Tabla1.ToListAsync());
         }
@@ -53,13 +53,13 @@ namespace JimmyAlbarracin_Examen1P.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre,ContenidoPremium,Precio,Celular,FechaCompra")] JA_Tabla1 jA_Tabla1)
+        public async Task<IActionResult> Create([Bind("Id,NombreVideojuego,ContenidoPremium,Precio,Descripcion,Fecha")] JA_Tabla1 jA_Tabla1)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(jA_Tabla1);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(JA_Index));
             }
             return View(jA_Tabla1);
         }
@@ -85,7 +85,7 @@ namespace JimmyAlbarracin_Examen1P.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,ContenidoPremium,Precio,Celular,FechaCompra")] JA_Tabla1 jA_Tabla1)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,NombreVideojuego,ContenidoPremium,Precio,Descripcion,Fecha")] JA_Tabla1 jA_Tabla1)
         {
             if (id != jA_Tabla1.Id)
             {
@@ -110,7 +110,7 @@ namespace JimmyAlbarracin_Examen1P.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(JA_Index));
             }
             return View(jA_Tabla1);
         }
@@ -145,7 +145,7 @@ namespace JimmyAlbarracin_Examen1P.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(JA_Index));
         }
 
         private bool JA_Tabla1Exists(int id)

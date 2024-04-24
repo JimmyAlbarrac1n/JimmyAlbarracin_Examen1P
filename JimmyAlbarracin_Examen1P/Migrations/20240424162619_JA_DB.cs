@@ -17,11 +17,11 @@ namespace JimmyAlbarracin_Examen1P.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NombreVideojuego = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ContenidoPremium = table.Column<bool>(type: "bit", nullable: false),
                     Precio = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Celular = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FechaCompra = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
